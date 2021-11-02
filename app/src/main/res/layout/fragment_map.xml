@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Harmful Plant Reporting Map"
+        android:textColor="@color/heading_color"
         android:textAlignment="center"
-        android:textSize="34sp" />
+        android:textSize="@dimen/heading_size" />
 
 </FrameLayout>

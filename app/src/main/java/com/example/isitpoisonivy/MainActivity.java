@@ -1,8 +1,11 @@
 package com.example.isitpoisonivy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,15 +13,33 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
+    private static FragmentManager fragmentManager;
     private NavigationBarView bottomNavigationView;
+    private static ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
+        actionBar = getSupportActionBar();
+        actionBar.hide();
         bottomNavigationView = findViewById(R.id.bottomnav);
         bottomNavigationView.setOnItemSelectedListener(bottomnavFunction);
+        openFragment(new DatabaseFragment(), false);
+    }
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new DatabaseFragment()).commit();
+    public static void openFragment(Fragment fragment, boolean actionBar) {
+        if(actionBar) {
+            MainActivity.actionBar.show();
+        }
+        else {
+            MainActivity.actionBar.hide();
+        }
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragment_container, fragment, "visible_fragment");
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 
     private NavigationBarView.OnItemSelectedListener bottomnavFunction = new NavigationBarView.OnItemSelectedListener() {
@@ -36,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new MapFragment();
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
+            openFragment(fragment, false);
             return true;
         }
     };

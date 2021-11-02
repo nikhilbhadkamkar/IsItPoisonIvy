@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_identify.xml" value="0.2125" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_camera.xml" value="0.268" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_database.xml" value="0.2546875" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_map.xml" value="0.2546875" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/menu/menu.xml" value="0.2546875" />
         <entry key="..\:/Users/Nikhil Bhadkamkar/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_main.xml" value="0.10054347826086957" />
         <entry key="..\:/Users/Nikhil Bhadkamkar/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_camera.xml" value="0.10054347826086957" />
         <entry key="..\:/Users/Nikhil Bhadkamkar/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_database.xml" value="0.10054347826086957" />
