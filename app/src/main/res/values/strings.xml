@@ -3,4 +3,5 @@
     <string name="identify">Identify</string>
     <string name="report_sighting">Report a Sighting</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pick_image_intent_text">Hello pick image intent</string>
 </resources>
