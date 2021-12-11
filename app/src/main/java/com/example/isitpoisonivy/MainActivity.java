@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.map:
                     fragment = new MapFragment();
                     break;
+                case R.id.profile:
+                    fragment = new ProfileFragment();
+                    break;
             }
             openFragment(fragment, false);
             return true;
