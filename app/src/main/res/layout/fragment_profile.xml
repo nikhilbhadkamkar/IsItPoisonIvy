@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Profile"
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textSize="30dp"
         android:gravity="center"
         android:layout_marginTop="15dp"
         />
@@ -51,6 +51,5 @@
         android:layout_marginTop="240dp"
         android:layout_marginLeft="120dp"
         />
-
 
 </FrameLayout>

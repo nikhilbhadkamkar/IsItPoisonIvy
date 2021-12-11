@@ -9,11 +9,12 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Identify or Report"
-        android:textAlignment="center"
-        android:textColor="@color/heading_color"
-        android:textSize="@dimen/heading_size" />
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
