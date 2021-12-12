@@ -85,13 +85,12 @@ public class DataBaseHelper {
     }
 
     /**
-     * Returns a list of Apiaries associated with the inputed user.
+     * Returns a list of reports associated with the inputed user.
      *
-     * The Apiaries will be initialised with Address and Zipcode, Hives and Equipment will be left
-     * empty.
+     * The reports will be initiated with all data relevant to report
      *
-     * @param user the user to retrieve Apiaries for.
-     * @return a list of Apiaries associated with the inputed user.
+     * @param user the user to retrieve reports for.
+     * @return a list of reports associated with the inputed user.
      * @throws SQLException if a SQL query fails.
      */
     public static ArrayList<Report> getReports(String user) throws SQLException {
@@ -101,7 +100,7 @@ public class DataBaseHelper {
         ArrayList<Report> reports = new ArrayList<>();
 
         // Issues a SQL query to find all Apiaries associated with user.
-        sql = "SELECT *, ST_Longitude(latLng) AS lat, ST_Latitude(latLng) AS lng," +
+        sql = "SELECT *, ST_Longitude(latLng) AS lat, ST_Latitude(latLng) AS lng " +
                 "FROM report_table " +
                 "WHERE username = \"" + user + "\""
         ;
@@ -117,8 +116,41 @@ public class DataBaseHelper {
 
         }
 
-        // Returns the list of apiaries associated with user.
+        // Returns the list of reports associated with user.
         return reports;
+
+    }
+
+    /**
+     * Returns a list of all plants in database
+     *
+     * @return a list of all plants
+     * @throws SQLException if a SQL query fails.
+     */
+    public static ArrayList<Plant> getPlants() throws SQLException {
+        String sql;
+        Statement stmt;
+        ResultSet results;
+        ArrayList<Plant> plants = new ArrayList<>();
+
+        // Issues a SQL query to find all Apiaries associated with user.
+        sql = "SELECT *" +
+                "FROM plant_table "
+        ;
+        stmt = con.createStatement();
+        results = stmt.executeQuery(sql);
+
+        // Fills the ArrayList of Apiaries.
+        while (results.next()) {
+            plants.add(new Plant(results.getInt("plant_id"), results.getString("Plant_Name"),
+                    results.getString("Botanical_Name"), results.getString("Species_Afflicted"),
+                    results.getString("Continents"), results.getString("Toxicity_Cause"),
+                    results.getString("Symptoms"), results.getString("Plant_Distribution")));
+
+        }
+
+        // Returns the list of reports associated with user.
+        return plants;
 
     }
 

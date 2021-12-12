@@ -8,9 +8,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static String userName;
@@ -18,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationBarView bottomNavigationView;
     private static ActionBar actionBar;
     private static Profile user;
+    private static ArrayList<Plant> plants;
 
     public static Profile getUser() {
         return user;
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        plants = new ArrayList<Plant>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
@@ -33,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomnav);
         bottomNavigationView.setOnItemSelectedListener(bottomnavFunction);
         openFragment(new DatabaseFragment(), false);
+
+        //initialize user, report, and plant data from database
+        try {
+            user = DataBaseHelper.initUser(userName);
+        } catch (SQLException e) {
+            Log.e("SQL", "Error with initUser");
+            e.printStackTrace();
+        }
+        initPlants();
+        initReports();
     }
 
     public static void openFragment(Fragment fragment, boolean actionBar) {
@@ -47,6 +63,60 @@ public class MainActivity extends AppCompatActivity {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    /**
+     * Initializes all reports associated with the
+     * userName of the current user. Does so via use of the DataBaseHelper class.
+     */
+    private void initReports() {
+        try {
+
+            // Establishes a connection with the database.
+            DataBaseHelper.establishConnection();
+
+            // Associates reports with the user.
+            user.getReports().addAll(DataBaseHelper.getReports(userName.toString()));
+
+
+        }
+        // If a SQL exception occurs, logs the error message.
+        catch (SQLException excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+        // If an unexpected exception occurs, logs the error message.
+        catch (Exception excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+    }
+
+    /**
+     * Initializes all plants  Does so via use of the DataBaseHelper class.
+     */
+    private void initPlants() {
+        try {
+
+            // Establishes a connection with the database.
+            DataBaseHelper.establishConnection();
+
+            // add plants to
+            plants.addAll(DataBaseHelper.getPlants());
+
+        }
+        // If a SQL exception occurs, logs the error message.
+        catch (SQLException excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+        // If an unexpected exception occurs, logs the error message.
+        catch (Exception excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+    }
+
+    public static ArrayList<Plant> getPlants() {return plants;}
 
     private NavigationBarView.OnItemSelectedListener bottomnavFunction = new NavigationBarView.OnItemSelectedListener() {
         @Override

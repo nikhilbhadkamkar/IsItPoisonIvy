@@ -13,7 +13,7 @@ public class Plant {
     public Plant(int id, String name, String bot_name, String speciesAff, String conts, String toxicity,
                  String symp, String distribution){
         plant_id = id;
-        Plant_name = bot_name;
+        Plant_name = name;
         Botanical_name = bot_name;
         Species_Afflicted = speciesAff;
         Continents = conts;

@@ -20,8 +20,12 @@ public class Profile {
         username = null;
         password = null;
         email = null;
-        reports = null;
+        reports = new ArrayList<Report>();
 
+    }
+
+    public ArrayList<Report> getReports() {
+        return reports;
     }
 
     public String getUsername() {
