@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+
+    tools:context=".RegisterActivity"
+    tools:ignore="MissingConstraints">
+    <!--change to image view, clickable to add picture-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TableLayout
+                android:id="@+id/editProfileTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_margin="30dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/table_row_top_bottom_margins"
+                    android:layout_marginBottom="@dimen/table_row_top_bottom_margins">
+                    <TextView
+                        android:id="@+id/usernameRegister_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/textSize_addHive"
+                        android:layout_weight="1"
+                        android:text="Username: "
+                        android:padding="@dimen/tablePadding_addHive"/>
+
+                    <EditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:layout_weight="4"
+
+                        android:padding="@dimen/tablePadding_addHive"/>
+                    <!--                    android:background="@drawable/hive_status_box"-->
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/table_row_top_bottom_margins"
+                    android:layout_marginBottom="@dimen/table_row_top_bottom_margins">
+                    <TextView
+                        android:id="@+id/emailRegister_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/textSize_addHive"
+                        android:layout_weight="1"
+                        android:text="Email: "
+                        android:padding="@dimen/tablePadding_addHive"/>
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_weight="4"
+                        android:padding="@dimen/tablePadding_addHive"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/table_row_top_bottom_margins"
+                    android:layout_marginBottom="@dimen/table_row_top_bottom_margins">
+                    <TextView
+                        android:id="@+id/passwordRegister_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/textSize_addHive"
+                        android:layout_weight="1"
+                        android:text="Password: "
+                        android:padding="@dimen/tablePadding_addHive"/>
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:layout_weight="4"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/tablePadding_addHive"/>
+                </TableRow>
+            </TableLayout>
+            <Button
+                android:id="@+id/bRegister"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="25sp"
+                android:layout_gravity="center"
+                android:background="@color/button_color" />
+
+            <TextView
+                android:id="@+id/regstatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Register Status"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvToLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Back to Login"
+                android:textSize="20sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

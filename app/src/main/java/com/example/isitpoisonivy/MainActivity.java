@@ -13,9 +13,15 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
+    public static String userName;
     private static FragmentManager fragmentManager;
     private NavigationBarView bottomNavigationView;
     private static ActionBar actionBar;
+    private static Profile user;
+
+    public static Profile getUser() {
+        return user;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

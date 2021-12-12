@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_identify.xml" value="0.2125" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_login.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/activity_register.xml" value="0.16927083333333334" />
         <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_camera.xml" value="0.268" />
         <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_database.xml" value="0.2546875" />
         <entry key="..\:/Users/12625/AndroidStudioProjects/IsItPoisonIvy/app/src/main/res/layout/fragment_identify.xml" value="0.16354166666666667" />
