@@ -30,9 +30,8 @@ public class MapFragment extends Fragment {
         supportMapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull GoogleMap googleMap) {
-                //googleMap.addMarker(new MarkerOptions().position(new LatLng(45.6366, -89.4061951)).title("Poison Ivy"));
                 for (int i=0; i<MainActivity.getAllReports().size(); i++) {
-                    googleMap.addMarker(new MarkerOptions().position(MainActivity.getAllReports().get(i).getmLocation()).title(MainActivity.getAllReports().get(i).toString()));
+                    googleMap.addMarker(new MarkerOptions().position(MainActivity.getAllReports().get(i).getmLocation()).title(MainActivity.getPlants().get(i).getPlant_name()));
                 }
             }
         });
