@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
      * getter method for all reports
      * @return arraylist of all reports on database
      */
-    public ArrayList<Report> getAllReports(){return allReports;}
+    public static ArrayList<Report> getAllReports(){return allReports;}
 
     /**
      * Initializes all plants  Does so via use of the DataBaseHelper class.
