@@ -19,14 +19,16 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/plantId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="Plant Name : XYZ"
+        android:text="Plant Id : XYZ"
         android:layout_marginTop="50dp"
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/plantName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -35,6 +37,7 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/botanicalName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
@@ -43,6 +46,7 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/symptoms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
