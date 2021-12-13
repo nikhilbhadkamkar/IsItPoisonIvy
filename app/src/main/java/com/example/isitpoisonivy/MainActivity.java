@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             DataBaseHelper.establishConnection();
 
             // Associates reports with the user.
-            allReports.addAll(DataBaseHelper.getReports(userName.toString()));
+            allReports.addAll(DataBaseHelper.getAllReports());
 
 
         }

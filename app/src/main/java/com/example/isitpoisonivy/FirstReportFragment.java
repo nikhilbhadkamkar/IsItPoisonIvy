@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -73,6 +74,12 @@ public class FirstReportFragment extends Fragment {
             plantStringList.add(plantList.get(i).getPlant_name());
         }
 
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_spinner_item, plantStringList);
+
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
 
 
         return view;
