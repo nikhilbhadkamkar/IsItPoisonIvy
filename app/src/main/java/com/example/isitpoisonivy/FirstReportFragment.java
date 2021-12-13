@@ -7,6 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,16 +56,25 @@ public class FirstReportFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first_report, container, false);
+        final View view =  inflater.inflate(R.layout.fragment_first_report, container, false);
+
+        Spinner spinner = view.findViewById(R.id.plant_spinner);
+        ArrayList<String> plantStringList = new ArrayList<String>();
+        ArrayList<Plant> plantList = MainActivity.getPlants();
+
+        for (int i = 0; i < plantList.size(); i++) {
+            plantStringList.add(plantList.get(i).getPlant_name());
+        }
+
+
+
+        return view;
     }
 }

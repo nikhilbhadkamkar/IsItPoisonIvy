@@ -100,7 +100,7 @@ public class DataBaseHelper {
         ArrayList<Report> reports = new ArrayList<>();
 
         // Issues a SQL query to find all Apiaries associated with user.
-        sql = "SELECT *, ST_Longitude(latLng) AS lat, ST_Latitude(latLng) AS lng " +
+        sql = "SELECT * " +
                 "FROM report_table " +
                 "WHERE username = \"" + user + "\""
         ;
@@ -136,8 +136,7 @@ public class DataBaseHelper {
         ArrayList<Report> reports = new ArrayList<>();
 
         // Issues a SQL query to find all Apiaries associated with user.
-        sql = "SELECT *, ST_Longitude(latLng) AS lat, ST_Latitude(latLng) AS lng " +
-                "FROM report_table "
+        sql = "SELECT * FROM report_table "
         ;
         stmt = con.createStatement();
         results = stmt.executeQuery(sql);

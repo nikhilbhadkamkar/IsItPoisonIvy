@@ -87,4 +87,9 @@ public class Plant {
     public void setPlant_Distribution(String plant_Distribution) {
         Plant_Distribution = plant_Distribution;
     }
+
+    @Override
+    public String toString(){
+        return Plant_name;
+    }
 }
