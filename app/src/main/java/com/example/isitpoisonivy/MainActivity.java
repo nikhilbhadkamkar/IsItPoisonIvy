@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static ActionBar actionBar;
     private static Profile user;
     private static ArrayList<Plant> plants;
+    private static ArrayList<Report> allReports;
 
     public static Profile getUser() {
         return user;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         plants = new ArrayList<Plant>();
+        allReports = new ArrayList<Report>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fragmentManager = getSupportFragmentManager();
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         }
         initPlants();
         initReports();
+        initAllReports();
     }
 
     public static void openFragment(Fragment fragment, boolean actionBar) {
@@ -90,6 +93,38 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    /**
+     * Initializes all reports in the database. Does so via use of the DataBaseHelper class.
+     */
+    private void initAllReports() {
+        try {
+
+            // Establishes a connection with the database.
+            DataBaseHelper.establishConnection();
+
+            // Associates reports with the user.
+            allReports.addAll(DataBaseHelper.getReports(userName.toString()));
+
+
+        }
+        // If a SQL exception occurs, logs the error message.
+        catch (SQLException excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+        // If an unexpected exception occurs, logs the error message.
+        catch (Exception excpt) {
+            Log.e("ERROR:", excpt.getMessage());
+
+        }
+    }
+
+    /**
+     * getter method for all reports
+     * @return arraylist of all reports on database
+     */
+    public ArrayList<Report> getAllReports(){return allReports;}
 
     /**
      * Initializes all plants  Does so via use of the DataBaseHelper class.

@@ -122,6 +122,41 @@ public class DataBaseHelper {
     }
 
     /**
+     * Returns a list of reports in the database
+     *
+     * The reports will be initiated with all data relevant to report
+     *
+     * @return a list of reports associated with the inputed user.
+     * @throws SQLException if a SQL query fails.
+     */
+    public static ArrayList<Report> getAllReports() throws SQLException {
+        String sql;
+        Statement stmt;
+        ResultSet results;
+        ArrayList<Report> reports = new ArrayList<>();
+
+        // Issues a SQL query to find all Apiaries associated with user.
+        sql = "SELECT *, ST_Longitude(latLng) AS lat, ST_Latitude(latLng) AS lng " +
+                "FROM report_table "
+        ;
+        stmt = con.createStatement();
+        results = stmt.executeQuery(sql);
+
+        // Fills the ArrayList of Apiaries.
+        while (results.next()) {
+            LatLng latlng = new LatLng(results.getDouble("lat"), results.getDouble("lng"));
+            reports.add(new Report(latlng,
+                    results.getTimestamp("timestamp"), results.getString("username"),
+                    results.getInt("reportid"), results.getInt("plant_id")));
+
+        }
+
+        // Returns the list of reports associated with user.
+        return reports;
+
+    }
+
+    /**
      * Returns a list of all plants in database
      *
      * @return a list of all plants
