@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 public class PlantFragment extends Fragment {
 
     private int plantPosition;
+    Plant mplant;
 
     public PlantFragment(Integer position) {
         this.plantPosition = position;
@@ -38,6 +39,9 @@ public class PlantFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_plant, container, false);
+        View view =  inflater.inflate(R.layout.fragment_plant, container, false);
+        mplant = MainActivity.getPlants().get(plantPosition);
+
+        return view;
     }
 }

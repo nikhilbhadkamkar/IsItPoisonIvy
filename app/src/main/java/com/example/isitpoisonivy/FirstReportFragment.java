@@ -77,6 +77,9 @@ public class FirstReportFragment extends Fragment {
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_spinner_item, plantStringList);
 
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
