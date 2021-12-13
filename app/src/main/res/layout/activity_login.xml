@@ -38,7 +38,6 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/green"
             android:text="Login"
             android:textSize="20sp" />
 
@@ -48,7 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/green"
             android:text="Register"
             android:textSize="20sp" />
 
